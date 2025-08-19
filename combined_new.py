@@ -12,10 +12,10 @@ from twilio.rest import Client
 
 #  Twilio SMS Function
 def send_sms_alert_twilio(message_body):
-    account_sid = 'AC51a6d1a70a00289c8f1ccbd2db276640'
-    auth_token = 'b899bc732deb43652087ba08f93f9302'
-    from_number = '+18564741264'
-    to_number = '+91787611200'
+    account_sid = '##################33'
+    auth_token = '####################'
+    from_number = '+#########'
+    to_number = '+#########'
 
     client = Client(account_sid, auth_token)
     message = client.messages.create(
@@ -28,8 +28,8 @@ def send_sms_alert_twilio(message_body):
 #  Email Function (Only for Ambulance)
 def send_alert_to_hospital(location, image_path):
     sender_email = "smart.traffic.alertss@gmail.com"
-    sender_password = "kzzdwqqiilyacnyi"
-    recipient_email = "kamraharshit26@gmail.com"
+    sender_password = "#############"
+    recipient_email = "#################@gmail.com"
 
     subject = "🚨 Emergency Alert: Ambulance Detected"
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -57,7 +57,7 @@ Google Maps: https://www.google.com/maps/search/?api=1&query={location.replace('
         server.send_message(msg)
         server.quit()
         print(" Email sent to hospital.")
-        send_sms_alert_twilio("🚨 Ambulance detected at Thapar University. Check email for snapshot.")
+        send_sms_alert_twilio("Ambulance detected at Thapar University. Check email for snapshot.")
     except Exception as e:
         print(" Email sending failed:", e)
 
@@ -110,7 +110,7 @@ while True:
             if not email_sent:
                 snapshot_path = f"ambulance_{datetime.now().strftime('%Y%m%d_%H%M%S')}.jpg"
                 cv2.imwrite(snapshot_path, frame)
-                send_alert_to_hospital("Thapar University, Patiala", snapshot_path)
+                send_alert_to_hospital("University", snapshot_path)
                 email_sent = True
 
         elif class_name == "firetruck":
@@ -150,3 +150,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
