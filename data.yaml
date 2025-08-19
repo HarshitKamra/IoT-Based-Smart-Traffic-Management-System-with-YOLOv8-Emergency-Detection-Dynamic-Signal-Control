@@ -1,0 +1,7 @@
+path: C:/Users/HP/OneDrive/Desktop/ambulance_dataset_v2
+
+train: train/images
+val: valid/images
+
+nc: 2
+names: ['Ambulance', 'Fire Truck']
